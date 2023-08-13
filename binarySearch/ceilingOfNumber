@@ -1,1 +1,36 @@
+// basically when it comes to ceiling or floor , its a simple binary search program but instead of returning -1 u either return start or end.
 
+public class ceiling {
+    public static void main(String[] args) {
+        int[] arr = {2,3,5,9,14,16,18};
+        int target = 15;
+
+        //find the ceiling that is 16 as we donot have 15 in the array (return start)
+        //find the floor its 14 is as we donot have 15 in array. (return end)
+
+        int ans = ceiling(arr,target);
+        System.out.print(ans);
+    }
+
+    static int ceiling(int[] arr, int target) {
+
+        int start = 0;
+        int end = arr.length -1;
+
+        while ( start <= end ) {
+
+            int mid = start + (end - start )/2;
+
+            if ( target < arr[mid]) {
+                end = mid -1;
+            } else if ( target > arr[mid]) {
+                start = mid + 1;
+            }
+            else {
+                return mid;
+            }
+        }
+
+        return arr[start]; // it will return ceiling value.
+    }
+}
