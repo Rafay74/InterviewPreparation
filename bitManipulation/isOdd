@@ -1,0 +1,22 @@
+public class strrings {
+    public static void main(String[] args) {
+        int n = 17;
+        System.out.print(isOdd(n));
+    }
+
+    static boolean isOdd(int n ) {
+       return  (n & 1) == 1; //true
+    }
+}
+
+Explanation: 
+basically machines store values in binary format so 17 will be stored like this = 10001
+in binary format u can determined whether the number is Even and Odd by last digit , if its 1 = odd , 0 = even.
+to get the last digit from this number we can do And between number and 1 , and get the last digit.
+
+  10001
+  00001
+---------
+  00001
+---------
+as its 1 , then it will return true.
