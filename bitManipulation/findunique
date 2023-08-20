@@ -1,0 +1,22 @@
+// xor's rule of thumb:
+// a^a = 0
+// a^1 = 1
+// XOR is associative : order doesnt matter 1^4^2^6^1^4^5^5^2 = 1^1^2^2^4^4^5^5^6 , So same values will return 0 , and u will be left with unique number.
+
+public class strrings {
+    public static void main(String[] args) {
+        int[] arr = { 1,1,2,2,4,4,5,5,6};
+        System.out.print(unique(arr));
+    }
+
+    static int unique(int[] arr) {
+        int unique = 0;
+
+        for (int n : arr) {a
+            unique ^= n; // XOR'ing the current value in the array with 'unique'
+        }
+
+        return unique;
+    }
+
+}
