@@ -1,0 +1,16 @@
+// get and set methods are used here
+
+
+public static List<Integer> reverseArray(List<Integer> a) {
+    int start = 0;
+    int end = a.size() -1;
+    
+    while ( start <= end) {
+        int temp = a.get(start);
+        a.set(start, a.get(end));
+        a.set(end,temp);
+        start ++;
+        end --;
+    }
+    return a;
+    }
