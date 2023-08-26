@@ -1,0 +1,35 @@
+public class thtest {
+    public static void main(String[] args) {
+        int[] arr = {1,5,4,2,9,9,9};
+        int k = 3; // size of subarray
+        System.out.print(slidingwindowalgorithm(arr,k));
+
+    }
+    
+    static int slidingwindowalgorithm(int[] arr, int k) {
+
+
+        int wSum = 0;
+        int mSum =Integer.MIN_VALUE;
+
+        //find the first window sum.
+        for (int i = 0; i < k; i++) {
+            wSum += arr[i];
+            
+        }
+
+        //find the maximum now
+        for (int i = k; i < arr.length; i++) {
+            // old value of sum - element that is removed from array  + element that is added in the window.
+            wSum = wSum - arr[i-k] + arr[i];
+            mSum = Math.max(mSum,wSum);
+
+        }
+
+        return mSum;
+        
+    }
+
+
+
+}
