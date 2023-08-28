@@ -1,0 +1,30 @@
+//Given an array of sorted numbers and a target sum, find a pair in the array whose sum is equal to the given target.
+
+public class recursion {
+    public static void main(String[] args) {
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        System.out.print(removeduplicates(nums));
+
+
+
+
+
+    }
+
+    static int removeduplicates(int[] arr) {
+
+        //we dont touch the 0th index as it is always unique
+        int i = 1;
+        for ( int j =1; j < arr.length; j++) {
+            // these condition is run when u find a unique number
+            if ( arr[j-1] != arr[j]) { // if true , then keep the unique number  and increment i pointer.
+                arr[i] = arr[j];
+                i++;
+
+            }
+        }
+        return i;
+    }
+
+
+}
