@@ -1,0 +1,14 @@
+//https://leetcode.com/problems/find-the-duplicate-number/
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int i =1; //starting from 1st index cause 0th will be unqiue always
+        for(int j =1; j < nums.length; j++) {
+            if ( nums[j-1] == nums[j]) {  // compare j with previous value , if matches return values;
+                return nums[j];
+            }
+        }
+        return -1;
+    }
+    
+}
