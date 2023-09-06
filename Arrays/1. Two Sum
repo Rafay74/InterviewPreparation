@@ -1,0 +1,31 @@
+//https://leetcode.com/problems/two-sum/description/
+
+//using hashmap as the array is not sorted , or else two pointer approach could be used here too.
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // Initialize an array to store the result, which will contain two indices.
+        int result[] = new int[2];
+        
+        // Create a HashMap to store the numbers from 'nums' and their corresponding indices.
+        Map<Integer, Integer> myMap = new HashMap<>();
+        
+        // Iterate through the 'nums' array.
+        for(int i = 0; i < nums.length ; i++) {
+            // Calculate the complement needed to reach the target sum.
+            int remains = target - nums[i];
+            
+            // Check if the complement is already in the HashMap.
+            if (myMap.containsKey(remains)) {
+                // If found, return the indices of the two numbers that add up to the target.
+                return new int[] {myMap.get(remains), i};
+            } else {
+                // If not found, add the current number and its index to the HashMap for future reference.
+                myMap.put(nums[i], i);
+            }
+        }
+        
+        // If no valid pair is found, return [-1, -1] to indicate that no solution exists.
+        return new int[] {-1, -1};
+    }
+}
