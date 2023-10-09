@@ -1,0 +1,24 @@
+package com.rafay;
+
+import java.util.Scanner;
+
+public class revision {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a string : ");
+
+        String str = in.nextLine();   //.next() if its a word.
+        String reversed_str = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            reversed_str = str.charAt(i) + reversed_str;
+        }
+
+
+        System.out.println(reversed_str);
+
+
+
+
+    }
+}
