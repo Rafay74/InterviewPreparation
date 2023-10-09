@@ -1,0 +1,34 @@
+package com.rafay;
+
+import java.util.Scanner;
+
+public class revision {
+    public static void main(String[] args) {
+       //revers a number after taking input:
+
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a number");
+
+        int num = in.nextInt(); //12345
+
+        System.out.println(reverse(num));
+
+
+
+
+    }
+
+    static int reverse(int num) {
+        int rev = 0;
+        while ( num != 0) {
+            int digit = num % 10; // get the last digit
+            rev = rev * 10 + digit; //store in reversed order
+            num = num/10;
+
+        }
+        return rev;
+
+    }
+
+}
