@@ -1,0 +1,31 @@
+package com.rafay;
+
+import java.util.Scanner;
+
+public class revision {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+
+        System.out.println("Enter a number : ");
+        int num = in.nextInt();
+        int count = 0;
+
+        // number must be greater than 1 and has only 2 factor. [logic]
+
+        if ( num > 1) {
+            for (int i = 1; i <= num; i++) {
+                if ( num % i == 0) count++;
+            }
+            if (count ==2 ) {
+                System.out.print("It is a prime number");
+            } else {
+                System.out.println("It is not a prime number");
+            }
+
+        } else {
+            System.out.println("The number is not a prime number!");
+        }
+
+    }
+}
